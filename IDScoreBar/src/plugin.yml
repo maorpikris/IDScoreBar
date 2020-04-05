@@ -1,0 +1,10 @@
+name: IDScoreBar
+version: 1.0
+description: something
+author: TheYodaMan
+main: maorp1111.idscorebar.Main
+
+commands:
+    id:
+        usage: /<command>
+        description: Turning off and on the id scoreboard.
