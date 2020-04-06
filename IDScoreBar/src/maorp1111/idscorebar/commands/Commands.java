@@ -4,11 +4,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import maorp1111.idscorebar.Main;
+import maorp1111.idscorebar.listeners.SBListener;
 import maorp1111.idscorebar.utils.Utils;
-import net.minecraft.server.v1_12_R1.CommandExecute;
 
 public class Commands implements CommandExecutor{
 	
@@ -22,12 +21,12 @@ public class Commands implements CommandExecutor{
 				if(Utils.isOnList(p, Main.onList)) {
 					Main.onList.remove(p.getUniqueId().toString());
 					p.sendMessage("[IDScoreBar] §cOFF");
-					maorp1111.idscorebar.listeners.Listener.removeScoreBoard(p);
+					SBListener.removeScoreBoard(p);
 					return true;
 				} else {
 					Main.onList.add(p.getUniqueId().toString());
 					p.sendMessage("[IDScoreBar] §aON");
-					maorp1111.idscorebar.listeners.Listener.setupScoreboard();
+					SBListener.setupScoreboard();
 					return true;
 				}
 			}

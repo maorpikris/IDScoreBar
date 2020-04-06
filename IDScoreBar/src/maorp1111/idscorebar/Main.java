@@ -18,7 +18,7 @@ public class Main extends JavaPlugin{
 		getCommand("id").setExecutor(new Commands());
 		getLogger().info("<IDScoreBar> have been enabled.");
 		PluginManager pm = getServer().getPluginManager();
-		Listener listener = new maorp1111.idscorebar.listeners.Listener(this);
+		Listener listener = new maorp1111.idscorebar.listeners.SBListener(this);
 		onList = getConfigPlayers();
 		pm.registerEvents(listener, this);
 	}

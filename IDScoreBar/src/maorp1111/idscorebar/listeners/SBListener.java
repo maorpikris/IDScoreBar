@@ -14,10 +14,10 @@ import org.bukkit.scoreboard.ScoreboardManager;
 
 import maorp1111.idscorebar.Main;
 import maorp1111.idscorebar.utils.Utils;
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.event.Listener;
 
 
-public class Listener implements org.bukkit.event.Listener {
+public class SBListener implements Listener {
 	
 	static ScoreboardManager sbm; 
 	static Scoreboard sb;
@@ -25,7 +25,7 @@ public class Listener implements org.bukkit.event.Listener {
 	Score itemId;
 	String lastScoreName;
 	
-	public Listener(Main p) {
+	public SBListener(Main p) {
 	}
 	
 	@EventHandler
