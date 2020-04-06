@@ -73,7 +73,9 @@ public class Listener implements org.bukkit.event.Listener {
             if(lastScoreName!= null) {
             	sb.resetScores(lastScoreName);
             }
-            
+            if(id.matches("(.*):0")) {
+            	id = id.split(":")[0];
+            }
             itemId = o.getScore(id);
             itemId.setScore(1);
             lastScoreName = id;

@@ -10,7 +10,7 @@ import maorp1111.idscorebar.Main;
 import maorp1111.idscorebar.utils.Utils;
 import net.minecraft.server.v1_12_R1.CommandExecute;
 
-public class Commands extends CommandExecute implements Listener, CommandExecutor{
+public class Commands implements CommandExecutor{
 	
 	public String cmdTurnOnOff = "id";
 
@@ -21,12 +21,12 @@ public class Commands extends CommandExecute implements Listener, CommandExecuto
 			if(cmd.getName().equalsIgnoreCase(cmdTurnOnOff)) {
 				if(Utils.isOnList(p, Main.onList)) {
 					Main.onList.remove(p.getUniqueId().toString());
-					p.sendMessage("removing ids;");
+					p.sendMessage("[IDScoreBar] §cOFF");
 					maorp1111.idscorebar.listeners.Listener.removeScoreBoard(p);
 					return true;
 				} else {
 					Main.onList.add(p.getUniqueId().toString());
-					p.sendMessage("adding ids");
+					p.sendMessage("[IDScoreBar] §aON");
 					maorp1111.idscorebar.listeners.Listener.setupScoreboard();
 					return true;
 				}
